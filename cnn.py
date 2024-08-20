@@ -171,7 +171,7 @@ class CNN:
         print(f'Using {torch.cuda.device_count()} GPU(s)')
 
         if hp_tuning:
-            os.makedirs(f'hp_tuning/{setting}/lr={lr}', exist_ok=True)
+            os.makedirs(f'hp_tuning/{setting}', exist_ok=True)
         else:
             self.model_save_path = f'{model_dir}/models/{setting}/{setting}' if trial is None else f'{model_dir}/models/{setting}/{setting}_{trial}'
 
@@ -340,7 +340,7 @@ class CNN:
                 counter += 1
 
         if self.hp_tuning:
-            np.save(f'hp_tuning/{self.setting}/lr={self.lr}/trial_{self.trial}', best_val_auc)
+            np.save(f'hp_tuning/{self.setting}/lr={self.lr}.npy', best_val_auc)
 
     def test(self, test_loader):
         model = torch.load(self.model_save_path)

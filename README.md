@@ -1,5 +1,6 @@
 # Fusion Strategies for Multimodal Learning of Biophysical Landscape Features
 ECCV 2024 Computer Vision for Ecology Workshop
+
 Extension of class project for STAT 288: Deep Statistics - AI and Earth Observations for Sustainable Development, Spring 2024, Harvard University
 
 ## Run Files
@@ -11,3 +12,4 @@ Extension of class project for STAT 288: Deep Statistics - AI and Earth Observat
 6. ```python select_hp.py```
 7. ```bash run_bash.sh```
 8. ```python plot_results.py```
+9. ```python analyze_gating_weights.py```
