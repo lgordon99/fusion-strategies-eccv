@@ -1,4 +1,4 @@
-# Fusion Strategies for Multimodal Learning of Biophysical Landscape Features
+# Multimodal Fusion Strategies for Mapping Biophysical Landscape Features
 ECCV 2024 Computer Vision for Ecology Workshop
 
 Extension of class project for STAT 288: Deep Statistics - AI and Earth Observations for Sustainable Development, Spring 2024, Harvard University
