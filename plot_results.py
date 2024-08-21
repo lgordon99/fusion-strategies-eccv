@@ -22,6 +22,7 @@ width = 0.1
 columnspacing = 1
 handletextpad = 0.5
 handlelength = 1
+labelspacing = 0.4
 fontsize = 9
 
 for setting in settings:
@@ -53,7 +54,7 @@ def plot_class_results(image_class):
     class_se_results_plot = [[class_results_se[setting][eval_metric][image_class] for eval_metric in class_eval_metrics] for setting in settings]
 
     fig, ax = plt.subplots(dpi=300)
-    plt.subplots_adjust(top=0.5, right=0.5)
+    plt.subplots_adjust(top=0.4, right=0.5)
     x = np.arange(len(class_eval_metrics))
     multiplier = 0
 
@@ -69,7 +70,6 @@ def plot_class_results(image_class):
     ax.set_xticks(x + width)
     ax.set_xticklabels([eval_metric.capitalize() for eval_metric in class_eval_metrics])
     ax.set_title(f'{image_class.capitalize()} Class')
-    ax.legend(ncol=1, columnspacing=columnspacing, handletextpad=handletextpad, handlelength=handlelength, fontsize=fontsize)
     plt.savefig(f'figures/pdfs/{image_class}_results.pdf', bbox_inches='tight', pad_inches=0.1, transparent=False)
     plt.savefig(f'figures/pngs/{image_class}_results.png', bbox_inches='tight', pad_inches=0.1, transparent=False)
     print(f'Plotted {image_class} results')
@@ -79,7 +79,7 @@ def plot_overall_results():
     overall_se_results_plot = [[overall_results_se[setting][eval_metric] for eval_metric in overall_eval_metrics] for setting in settings]
 
     fig, ax = plt.subplots(dpi=300)
-    plt.subplots_adjust(top=0.5, right=0.5)
+    plt.subplots_adjust(top=0.4, right=0.5)
     x = np.arange(len(overall_eval_metrics))
     multiplier = 0
 
@@ -93,7 +93,7 @@ def plot_overall_results():
     ax.set_xticks(x + width)
     ax.set_xticklabels(overall_eval_metric_labels)
     ax.set_title('Macro-Average')
-    ax.legend(ncol=1, columnspacing=columnspacing, handletextpad=handletextpad, handlelength=handlelength, fontsize=fontsize)
+    ax.legend(ncol=1, columnspacing=columnspacing, handletextpad=handletextpad, handlelength=handlelength, labelspacing=labelspacing, fontsize=fontsize)
     plt.savefig(f'figures/pdfs/macro_averaged_results.pdf', bbox_inches='tight', pad_inches=0.1, transparent=False)
     plt.savefig(f'figures/pngs/macro_averaged_results.png', bbox_inches='tight', pad_inches=0.1, transparent=False)
     print(f'Plotted macro-averaged results')
